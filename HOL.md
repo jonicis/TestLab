@@ -22,24 +22,7 @@
 	}
 	````
 
-<pre><code class="C#"><span style="color:#0000FF">public</span> <span style="color:#0000FF">class</span> GuestBookEntry: Microsoft.WindowsAzure.StorageClient.TableServiceEntity
-{
-    <span style="color:#0000FF">private</span> <span style="color:#0000FF">string</span> test = <span style="color:#8B0000">&quot;sample text&quot;</span>;
-}
-</code></pre>
 
-<p>(Code Snippet - <em>Introduction to Windows Azure - Ex1 GuestBookDataSource Fields</em> - CS)</p>
-<div class="boxcontent"><div class="boxheader"><p>C#</p></div>
-public class GuestBookDataSource{
-<div class="CodeHighlighter">
-<pre>
-<code class="csharp">   private static CloudStorageAccount storageAccount;
-   private GuestBookDataContext context;
-</code>
-</pre>
-</div>
-}
-</div>
 
 <p>(Code Snippet - <em>Introduction to Windows Azure - Ex1 GuestBookDataSource Fields</em> - CS)</p>
 <div class="boxcontent"><div class="boxheader"><p>C#</p></div>
