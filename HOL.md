@@ -10,24 +10,10 @@
 
 In this exercise, you create a guest book application and execute it in the local development fabric.
 
-<div style="color:red">
-test inline style
-</div>
-
-<div class="boxcontent"><div class="boxheader"><p>C#</p></div>public class GuestBookDataSource
+<!-- mark:2 -->
+````C#
+public class GuestBookEntry
+	: Microsoft.WindowsAzure.StorageClient.TableServiceEntity
 {
-  ...
-<strong>   static GuestBookDataSource()
-   {
-     storageAccount = CloudStorageAccount.FromConfigurationSetting("DataConnectionString");
-
-</strong>
-<em>
-     CloudTableClient.CreateTablesFromModel(
-     typeof(GuestBookDataContext),
-     storageAccount.TableEndpoint.AbsoluteUri,
-     storageAccount.Credentials);
-</em>
-  }
 }
-</div>
+````
