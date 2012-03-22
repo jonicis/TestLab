@@ -17,3 +17,36 @@ public class GuestBookEntry
 {
 }
 ````
+
+
+(Code Snippet – _Introduction to Windows Azure - Ex1 GuestBookDataSource Static Constructor_ – CS)
+
+<!-- mark:4-12 -->
+````C#
+public class GuestBookDataSource
+{
+  ...
+   static GuestBookDataSource()
+   {
+	 storageAccount = CloudStorageAccount.FromConfigurationSetting("DataConnectionString");
+
+	 CloudTableClient.CreateTablesFromModel(
+	 typeof(GuestBookDataContext),
+	 storageAccount.TableEndpoint.AbsoluteUri,
+	 storageAccount.Credentials);
+  }
+}
+````
+
+<!-- mark:4-8 -->
+```` C#
+public class GuestBookDataSource
+{
+  ...
+  public GuestBookDataSource()
+  {
+    this.context = new GuestBookDataContext(storageAccount.TableEndpoint.AbsoluteUri, storageAccount.Credentials);
+    this.context.RetryPolicy = RetryPolicies.Retry(3, TimeSpan.FromSeconds(1));
+  }
+}
+````
