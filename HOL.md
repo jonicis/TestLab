@@ -9,3 +9,21 @@
 ## Exercise 1: Building Your First Windows Azure Application ##
 
 In this exercise, you create a guest book application and execute it in the local development fabric.
+
+<div class="boxcontent"><div class="boxheader"><p>C#</p></div>public class GuestBookDataSource
+{
+  ...
+<strong>   static GuestBookDataSource()
+   {
+     storageAccount = CloudStorageAccount.FromConfigurationSetting(&amp;quot;DataConnectionString&amp;quot;);
+
+</strong>
+<em>
+     CloudTableClient.CreateTablesFromModel(
+     typeof(GuestBookDataContext),
+     storageAccount.TableEndpoint.AbsoluteUri,
+     storageAccount.Credentials);
+</em>
+  }
+}
+</div>
